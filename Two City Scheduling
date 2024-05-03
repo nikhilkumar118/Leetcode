@@ -1,0 +1,10 @@
+class Solution(object):
+    def twoCitySchedCost(self, costs):
+        costs.sort(key=lambda x:x[0]-x[1])
+        t=0
+        n=len(costs)//2
+        for i in range(n):
+            t+=costs[i][0]
+        for i in range(n,len(costs)):
+            t+=costs[i][1]
+        return t
